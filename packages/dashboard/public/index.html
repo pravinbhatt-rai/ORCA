@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101211"><title>Orchestra — Local agent workbench</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app" class="shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="mark">O</span><span>orchestra<small>AGENT WORKSPACE</small></span></div>
+      <div class="workspace"><span class="pulse"></span><span>Local instance</span><span class="local-badge">LOCAL</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="nav">
+        <button data-page="canvas" class="nav-item active"><span>⌘</span>Canvas</button>
+        <button data-page="overview" class="nav-item"><span>◫</span>Overview</button>
+        <button data-page="runs" class="nav-item"><span>↗</span>Runs <i id="run-count"></i></button>
+        <button data-page="agents" class="nav-item"><span>◉</span>Agents</button>
+        <button data-page="skills" class="nav-item"><span>✳</span>Skills</button>
+        <button data-page="tools" class="nav-item"><span>⌘</span>Tools &amp; MCP</button>
+        <button data-page="connectors" class="nav-item"><span>⇄</span>Connectors</button>
+        <button data-page="memory" class="nav-item"><span>▤</span>Memory</button>
+        <button data-page="tasks" class="nav-item"><span>☷</span>Task board</button>
+      </nav>
+      <div class="nav-label secondary-label">CONTROL ROOM</div>
+      <nav>
+        <button data-page="approvals" class="nav-item"><span>◇</span>Approvals <i id="approval-count" class="count"></i></button>
+        <button data-page="router" class="nav-item"><span>⌁</span>Router</button>
+        <button data-page="lifecycle" class="nav-item"><span>⟳</span>Lifecycle</button>
+        <button data-page="updates" class="nav-item"><span>↓</span>Updates</button>
+        <button data-page="audit" class="nav-item"><span>≡</span>Audit log</button>
+        <button data-page="settings" class="nav-item"><span>⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="provider"><span class="dot green"></span><span><b>Mock provider</b><small>Offline · no API key</small></span><span class="chevron">⌄</span></div><div class="user-row"><div class="avatar">P</div><span><b>Local user</b><small>Private workspace</small></span></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="crumb"><span>Workspace</span><b>/</b><strong id="crumb-title">Overview</strong></div><div class="top-actions"><span class="env"><i></i>LOCAL ONLY</span><button class="icon-button" id="refresh" title="Refresh">↻</button><button class="avatar small-avatar">P</button></div></header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div><dialog id="dialog"></dialog>
+  <script src="/app.js" defer></script>
+</body></html>

@@ -1,0 +1,21 @@
+{
+  "name": "orchestra-local",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first agent orchestration workbench",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node --check packages/daemon/src/server.mjs && node --check packages/daemon/src/core.mjs && node --check packages/daemon/src/errors.mjs && node --check packages/daemon/src/llm.mjs && node --check packages/daemon/src/runtime.mjs && node --check packages/daemon/src/tool-registry.mjs && node --check packages/daemon/src/migrations.mjs && node --check packages/daemon/src/checkpoint-store.mjs && node --check packages/daemon/src/secrets.mjs && node --check packages/daemon/src/connectors/mcp-manager.mjs && node --check packages/dashboard/public/app.js",
+    "start": "node packages/daemon/src/server.mjs",
+    "dev": "node --watch packages/daemon/src/server.mjs",
+    "test": "node --test",
+    "typecheck": "npm run build",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}
